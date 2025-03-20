@@ -1,8 +1,10 @@
 import React, { useState } from 'react'; // ✅ Import useState
 import properties from '../data/properties';
 import PropertyCard from '../components/PropertyCard';
+import PropertyList from '../components/PropertyList';
 
 function Home() {
+  
   const [searchTerm, setSearchTerm] = useState('');
 
   // Filter properties based on search
@@ -29,6 +31,10 @@ function Home() {
           className="w-full p-2 border rounded shadow-sm"
         />
       </div>
+      <div className="container mx-auto p-4">
+      <h1 className="text-3xl font-bold mb-4">Available Properties</h1>
+      <PropertyList />
+    </div>
 
       <h2 className="text-2xl font-bold text-blue-600 mb-4">Available Properties</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
