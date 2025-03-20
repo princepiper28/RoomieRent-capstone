@@ -1,0 +1,19 @@
+{
+    "properties": [
+      {
+        "id": 1,
+        "title": "Cozy Apartment in Lagos",
+        "location": "Lagos, Nigeria",
+        "price": "$500/month",
+        "image": "https://via.placeholder.com/300x200"
+      },
+      {
+        "id": 2,
+        "title": "Modern Studio in Abuja",
+        "location": "Abuja, Nigeria",
+        "price": "$400/month",
+        "image": "https://via.placeholder.com/300x200"
+      }
+    ]
+  }
+  
