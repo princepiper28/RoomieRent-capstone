@@ -1,13 +1,27 @@
 import React, { useState } from 'react';
+import { useAuth } from '../AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
+  const { login } = useAuth();
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add your login logic here
     console.log('Logging in with:', email, password);
+
+    // Fake login logic (normally, you'd call an API here)
+    const mockUser = {
+      firstName: 'Prince',
+      lastName: 'Udoewah',
+      username: 'princepiper',
+      email: email,
+    };
+
+    login(mockUser);
+    navigate('/dashboard'); // Redirect after successful login
   };
 
   return (

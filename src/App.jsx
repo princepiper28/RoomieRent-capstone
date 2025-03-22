@@ -8,9 +8,12 @@ import PropertyDetails from './pages/PropertyDetails';
 import Listings from './pages/Listings';
 import SignUp from './pages/SignUp';
 import Login from './pages/Login';
+import Dashboard from './pages/Dashboard';
+import { AuthProvider } from './AuthContext';
 
 function App() {
   return (
+    <AuthProvider>
     <Router>
       <Navbar />
       <Routes>
@@ -21,8 +24,10 @@ function App() {
         <Route path="/SignUp" element={<SignUp />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/property/:id" element={<PropertyDetails />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </Router>
+    </AuthProvider>
   );
 }
 
