@@ -12,7 +12,7 @@ const PropertyCard = ({ property }) => (
     <p className="text-gray-600 mb-2">{property.location}</p>
     <p className="text-green-600 font-bold mb-2">{property.price}</p>
     <ul className="list-disc list-inside mb-3">
-      {property.features.map((feature, index) => (
+      {(property.features || []).map((feature, index) => (
         <li key={index}>{feature}</li>
       ))}
     </ul>

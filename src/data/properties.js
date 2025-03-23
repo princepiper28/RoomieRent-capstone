@@ -1,57 +1,52 @@
 const properties = [
-    {
-      id: 1,
-      title: "Modern Apartment in Lekki",
-      location: "Lekki, Lagos",
-      price: "₦250,000 / month",
-      image: "https://via.placeholder.com/300x200",
-      amenities: ["WiFi", "Parking", "Air Conditioning"]
-    },
-    {
-      id: 2,
-      title: "Cozy Studio in Ikeja",
-      location: "Ikeja, Lagos",
-      price: "₦150,000 / month",
-      image: "https://via.placeholder.com/300x200",
-      amenities: ["24/7 Security", "Water Supply", "Gym"]
-    },
-    {
-      id: 3,
-      title: "Shared Flat in Abuja",
-      location: "Garki, Abuja",
-      price: "₦180,000 / month",
-      image: "https://via.placeholder.com/300x200",
-      amenities: ["WiFi", "Shared Kitchen", "Laundry"]
-    },
-    {
-      id: 4,
-      title: "Modern Apartment in Magodo",
-      price: "₦500,000/month",
-      location: "Lekki, Lagos",
-      image: "https://via.placeholder.com/300x200",
-      amenities: ["24/7 Security", "Water Supply", "Gym"]
-     },
-    {
-      id: 5,
-      title: "Shared Room in Ikeja",
-      price: "₦150,000/month",
-      location: "Ikeja, Lagos",
-      image: "https://via.placeholder.com/300x200",
-      amenities: ["WiFi", "Shared Kitchen", "Laundry"]
-     },
-    {
-      id: 6,
-      title: "Luxury Duplex in VI",
-      price: "₦1,200,000/month",
-      location: "Victoria Island, Lagos",
-      image: "https://via.placeholder.com/300x200",
-      amenities: ["WiFi", "Parking", "Air Conditioning"]
-     },
+  {
+    id: 1,
+    title: "Modern 2 Bedroom Apartment",
+    location: "Lagos",
+    price: "$500/month",
+    image: "/images/photo1.jpeg",
+    features: ["2 bedrooms", "1 bathroom", "Furnished", "Close to shopping mall"]
+  },
+  {
+    id: 2,
+    title: "Cozy Studio Apartment",
+    location: "Abuja",
+    price: "$350/month",
+    image: "/images/photo2.jpeg",
+    features: ["Studio apartment", "1 bathroom", "WiFi included"]
+  },
+  {
+    id: 3,
+    title: "Luxury 3 Bedroom Condo",
+    location: "Port Harcourt",
+    price: "$900/month",
+    image: "/images/photo3.jpeg",
+    features: ["3 bedrooms", "2 bathrooms", "Swimming pool access", "24/7 security"]
+  },
+  {
+    id: 4,
+    title: "Furnished 1 Bedroom Apartment",
+    location: "Ibadan",
+    price: "$400/month",
+    image: "/images/photo4.jpeg",
+    features: ["1 bedroom", "Furnished", "Quiet neighborhood"]
+  },
+  {
+    id: 5,
+    title: "Spacious 4 Bedroom Duplex",
+    location: "Enugu",
+    price: "$1,200/month",
+    image: "/images/photo5.jpeg",
+    features: ["4 bedrooms", "3 bathrooms", "Parking space", "Large backyard"]
+  },
+  {
+    id: 6,
+    title: "Affordable Single Room",
+    location: "Kano",
+    price: "$150/month",
+    image: "/images/photo6.jpeg",
+    features: ["1 room", "Shared bathroom", "Budget-friendly"]
+  }
+];
 
-     
-      
-  ];
-
-  
-  export default properties;
-  
+export default properties;
