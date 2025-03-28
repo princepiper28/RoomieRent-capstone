@@ -20,6 +20,11 @@ function Navbar() {
         <li><Link to="/signUp" className="hover:text-blue-500">SignUp</Link></li>
         {user ? (
   <>
+  <li>
+  <Link to="/roommate-matching" className="hover:text-orange-400">
+    Roommate Matching
+  </Link>
+</li>
     <li>
       <Link to="/dashboard" className="hover:text-blue-500">Dashboard</Link>
     </li>
