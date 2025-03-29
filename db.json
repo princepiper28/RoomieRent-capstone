@@ -345,5 +345,69 @@
       "email": "princepiper28@gmail.com",
       "password": "11111111"
     }
-  ]
-}
+  ],
+    "listings": [
+      {
+        "id": 1,
+        "title": "Modern 2-Bedroom Apartment",
+        "location": "Lagos, Nigeria",
+        "price": 1500,
+        "type": "Apartment",
+        "image":  "/images/property26.jpeg",
+        "description": "Spacious 2-bedroom apartment with ocean view."
+      },
+      {
+        "id": 2,
+        "title": "Studio Apartment in Victoria Island",
+        "location": "Victoria Island, Lagos",
+        "price": 1200,
+        "type": "Studio",
+        "image":  "/images/property22.jpeg",
+        "description": "Fully furnished studio with modern amenities."
+      },
+      {
+        "id": 3,
+        "title": "Shared 3-Bedroom Duplex",
+        "location": "Lekki, Lagos",
+        "price": 800,
+        "type": "Shared",
+        "image":  "/images/property20.jpeg",
+        "description": "A duplex with shared common spaces and rooms."
+      }
+    ],
+    
+      "roommates": [
+        {
+          "id": 1,
+          "name": "John Doe",
+          "age": 25,
+          "gender": "Male",
+          "location": "Lagos",
+          "interests": ["Music", "Gaming", "Cooking"],
+          "profilePicture": "/images/man1.jpeg",
+          "rating": 4.5
+        },
+        {
+          "id": 2,
+          "name": "Jane Smith",
+          "age": 23,
+          "gender": "Female",
+          "location": "Abuja",
+          "interests": ["Reading", "Dancing", "Movies"],
+          "profilePicture": "/images/woman1.jpeg",
+          "rating": 4.8
+        },
+        {
+          "id": 3,
+          "name": "Michael Johnson",
+          "age": 27,
+          "gender": "Male",
+          "location": "Port Harcourt",
+          "interests": ["Sports", "Traveling", "Fitness"],
+          "profilePicture": "/images/man2.jpeg",
+          "rating": 4.2
+        }
+      ]
+    }
+    
+  
