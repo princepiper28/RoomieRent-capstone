@@ -407,7 +407,35 @@
           "profilePicture": "/images/man2.jpeg",
           "rating": 4.2
         }
-      ]
-    }
+      ],
+      
+        "messages": [
+          {
+            "id": 1,
+            "text": "Hello! Looking for a roommate?",
+            "sender": "Alice",
+            "timestamp": "10:00 AM"
+          },
+          {
+            "id": 2,
+            "text": "Yes! I'm searching for a place near the city center.",
+            "sender": "Bob",
+            "timestamp": "10:05 AM"
+          },
+          {
+            "id": 3,
+            "text": "I have an available room. Are you interested?",
+            "sender": "Alice",
+            "timestamp": "10:10 AM"
+          },
+          {
+            "id": 4,
+            "text": "That sounds great! Can you share more details?",
+            "sender": "Bob",
+            "timestamp": "10:15 AM"
+          }
+        ]
+      }
+    
     
   
