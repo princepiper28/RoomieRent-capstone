@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';  // ✅ Import HashRouter
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
@@ -16,7 +16,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 function App() {
   return (
     <AuthProvider>
-      <Router>
+      
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -38,7 +38,7 @@ function App() {
             }
           />
         </Routes>
-      </Router>
+      
     </AuthProvider>
   );
 }

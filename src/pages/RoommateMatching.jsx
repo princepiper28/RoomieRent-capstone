@@ -8,7 +8,7 @@ const mockRoommates = [
     location: "Lagos",
     budget: "$300/month",
     preferences: ["Non-smoker", "Pet-friendly", "Night owl"],
-    image: "/images/roommate1.jpg",
+    image: "roommate1.jpg",  // ✅ Only the filename
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ const mockRoommates = [
     location: "Abuja",
     budget: "$400/month",
     preferences: ["Quiet", "Early riser", "No pets"],
-    image: "/images/roommate2.jpg",
+    image: "roommate2.jpg",  // ✅ Only the filename
   }
 ];
 
@@ -52,7 +52,7 @@ const RoommateMatching = () => {
           {filteredRoommates.map((roommate) => (
             <div key={roommate.id} className="border p-4 rounded-lg shadow bg-white">
               <img
-                src={roommate.image}
+                src={`${process.env.PUBLIC_URL}/images/${roommate.image}`}  // ✅ Corrected path
                 alt={roommate.name}
                 className="w-full h-48 object-cover rounded mb-4"
               />

@@ -14,7 +14,14 @@ const Listings = () => {
           throw new Error('Network response was not ok');
         }
         const data = await response.json();
-        setProperties(data);
+        
+        // ✅ Ensure image paths are correct for deployment
+        const updatedProperties = data.map(property => ({
+          ...property,
+          image: `${process.env.PUBLIC_URL}/images/${property.image}`
+        }));
+
+        setProperties(updatedProperties);
       } catch (err) {
         console.error('Error fetching properties:', err);
         setError('Failed to fetch properties. Please try again later.');

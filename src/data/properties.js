@@ -4,7 +4,7 @@ const properties = [
     title: "Modern 2 Bedroom Apartment",
     location: "Lagos",
     price: "$500/month",
-    image: "/images/photo1.jpeg",
+    image: "photo1.jpeg",
     features: ["2 bedrooms", "1 bathroom", "Furnished", "Close to shopping mall"]
   },
   {
@@ -12,7 +12,7 @@ const properties = [
     title: "Cozy Studio Apartment",
     location: "Abuja",
     price: "$350/month",
-    image: "/images/photo2.jpeg",
+    image: "photo2.jpeg",
     features: ["Studio apartment", "1 bathroom", "WiFi included"]
   },
   {
@@ -20,7 +20,7 @@ const properties = [
     title: "Luxury 3 Bedroom Condo",
     location: "Port Harcourt",
     price: "$900/month",
-    image: "/images/photo3.jpeg",
+    image: "photo3.jpeg",
     features: ["3 bedrooms", "2 bathrooms", "Swimming pool access", "24/7 security"]
   },
   {
@@ -28,7 +28,7 @@ const properties = [
     title: "Furnished 1 Bedroom Apartment",
     location: "Ibadan",
     price: "$400/month",
-    image: "/images/photo4.jpeg",
+    image: "photo4.jpeg",
     features: ["1 bedroom", "Furnished", "Quiet neighborhood"]
   },
   {
@@ -36,7 +36,7 @@ const properties = [
     title: "Spacious 4 Bedroom Duplex",
     location: "Enugu",
     price: "$1,200/month",
-    image: "/images/photo5.jpeg",
+    image: "photo5.jpeg",
     features: ["4 bedrooms", "3 bathrooms", "Parking space", "Large backyard"]
   },
   {
@@ -44,7 +44,7 @@ const properties = [
     title: "Affordable Single Room",
     location: "Kano",
     price: "$150/month",
-    image: "/images/photo6.jpeg",
+    image: "photo6.jpeg",
     features: ["1 room", "Shared bathroom", "Budget-friendly"]
   }
 ];

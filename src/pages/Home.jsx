@@ -16,7 +16,9 @@ function Home() {
     <>
       <div
         className="bg-center bg-no-repeat bg-cover"
-        style={{ backgroundImage: "url(/images/homepage-background.jpg)" }}
+        style={{
+          backgroundImage: `url(${process.env.PUBLIC_URL}/images/homepage-background.jpg)`,  // ✅ Fixed background image path
+        }}
       >
         <div className="bg-black bg-opacity-60 min-h-screen p-8">
           <div className="text-center text-white mb-10">
@@ -67,10 +69,11 @@ function Home() {
           </div>
         </div>
       </div>
-      <Footer />   {/* ✅ Footer now inside the fragment */}
+      <Footer />
     </>
   );
 }
 
 export default Home;
+
 
