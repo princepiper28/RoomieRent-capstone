@@ -5,7 +5,10 @@ const About = () => {
   return (
     <div className="bg-gray-100">
       {/* Hero Section */}
-      <section className="bg-center bg-cover bg-no-repeat" style={{ backgroundImage: "url(/images/about-hero.jpeg)" }}>
+      <section 
+        className="bg-center bg-cover bg-no-repeat" 
+        style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/images/about-hero.jpeg)` }} // ✅ Fixed background image path
+      >
         <div className="bg-black bg-opacity-70 min-h-[300px] flex items-center justify-center text-center text-white p-10">
           <div>
             <h1 className="text-5xl font-bold mb-4">About RoomieRent</h1>
@@ -23,7 +26,12 @@ const About = () => {
         </p>
 
         <div className="grid md:grid-cols-2 gap-10 items-center">
-          <img src="/images/about-image1.jpeg" alt="RoomieRent Team" className="rounded-lg shadow-md" />
+          <img 
+            src={`${process.env.PUBLIC_URL}/images/about-image1.jpeg`} 
+            alt="RoomieRent Team" 
+            className="rounded-lg shadow-md" 
+            onError={(e) => e.target.src = `${process.env.PUBLIC_URL}/images/default-placeholder.jpg`} // ✅ Fallback for missing images
+          />
           <div>
             <h3 className="text-2xl font-semibold mb-4 text-gray-800">Our Mission</h3>
             <p className="text-gray-600 leading-relaxed">
@@ -44,7 +52,29 @@ const About = () => {
               <li>Passionate support team</li>
             </ul>
           </div>
-          <img src="/images/about-image2.jpeg" alt="Why Choose RoomieRent" className="rounded-lg shadow-md" />
+          <img 
+            src={`${process.env.PUBLIC_URL}/images/about-image2.jpeg`} 
+            alt="Why Choose RoomieRent" 
+            className="rounded-lg shadow-md"
+            onError={(e) => e.target.src = `${process.env.PUBLIC_URL}/images/default-placeholder.jpg`} // ✅ Fallback for missing images
+          />
+        </div>
+
+        {/* Additional Images */}
+        <div className="text-center mt-12">
+          <img 
+            src={`${process.env.PUBLIC_URL}/images/team-photo.jpeg`} 
+            alt="Our Team" 
+            className="w-full h-auto rounded mx-auto max-w-4xl"
+            onError={(e) => e.target.src = `${process.env.PUBLIC_URL}/images/default-placeholder.jpg`} // ✅ Fallback
+          />
+
+          <img 
+            src={`${process.env.PUBLIC_URL}/images/company-logo.png`} 
+            alt="Company Logo" 
+            className="h-16 mx-auto mt-6"
+            onError={(e) => e.target.src = `${process.env.PUBLIC_URL}/images/default-logo.png`} // ✅ Fallback
+          />
         </div>
       </section>
 

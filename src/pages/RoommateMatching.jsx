@@ -8,7 +8,7 @@ const mockRoommates = [
     location: "Lagos",
     budget: "$300/month",
     preferences: ["Non-smoker", "Pet-friendly", "Night owl"],
-    image: "roommate1.jpg",  // ✅ Only the filename
+    image: "roommate1.jpg", // ✅ Image filename only
   },
   {
     id: 2,
@@ -17,16 +17,17 @@ const mockRoommates = [
     location: "Abuja",
     budget: "$400/month",
     preferences: ["Quiet", "Early riser", "No pets"],
-    image: "roommate2.jpg",  // ✅ Only the filename
+    image: "roommate2.jpg", // ✅ Image filename only
   }
 ];
 
 const RoommateMatching = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
+  // Filter roommates based on name or location (case-insensitive)
   const filteredRoommates = mockRoommates.filter((roommate) =>
-    roommate.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    roommate.location.toLowerCase().includes(searchTerm.toLowerCase())
+    roommate.name.toLowerCase().includes(searchTerm.trim().toLowerCase()) ||
+    roommate.location.toLowerCase().includes(searchTerm.trim().toLowerCase())
   );
 
   return (
@@ -36,7 +37,7 @@ const RoommateMatching = () => {
           Find a Compatible Roommate
         </h1>
 
-        {/* Search Input */}
+        {/* 🔍 Search Input */}
         <div className="mb-6">
           <input
             type="text"
@@ -47,23 +48,26 @@ const RoommateMatching = () => {
           />
         </div>
 
-        {/* Roommate Cards */}
+        {/* 🏡 Roommate Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredRoommates.map((roommate) => (
             <div key={roommate.id} className="border p-4 rounded-lg shadow bg-white">
               <img
-                src={`${process.env.PUBLIC_URL}/images/${roommate.image}`}  // ✅ Corrected path
+                src={`${process.env.PUBLIC_URL}/images/${roommate.image}`} // ✅ Corrected path
                 alt={roommate.name}
                 className="w-full h-48 object-cover rounded mb-4"
               />
               <h2 className="text-xl font-semibold mb-1">{roommate.name}, {roommate.age}</h2>
               <p className="text-gray-600 mb-2">{roommate.location}</p>
               <p className="text-green-600 font-bold mb-2">{roommate.budget}</p>
+
+              {/* 🏷 Preferences List */}
               <ul className="text-gray-500 text-sm mb-3">
                 {roommate.preferences.map((pref, index) => (
                   <li key={index}>✔ {pref}</li>
                 ))}
               </ul>
+
               <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 w-full">
                 Send Match Request
               </button>

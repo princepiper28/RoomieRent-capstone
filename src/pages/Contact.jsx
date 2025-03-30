@@ -4,8 +4,8 @@ import { FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 const Contact = () => {
   return (
     <div
-      className="bg-center bg-cover bg-no-repeat min-h-screen flex items-center justify-center"
-      style={{ backgroundImage: "url(/images/contact-bg.jpeg)" }} // Make sure you place your contact-bg.jpg inside public/images
+      className="bg-center bg-cover bg-no-repeat min-h-screen flex items-center justify-center p-6"
+      style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/images/contact-bg.jpeg)` }} // ✅ Fixed background image path
     >
       <div className="bg-black bg-opacity-70 p-8 rounded-lg shadow-lg w-full max-w-3xl text-white">
         <h1 className="text-4xl font-bold text-center mb-6">Contact Us</h1>
@@ -20,7 +20,7 @@ const Contact = () => {
             <input
               type="text"
               placeholder="Your Name"
-              className="w-full border p-3 rounded text-black"
+              className="w-full border border-gray-500 p-3 rounded text-black focus:outline-none focus:border-blue-500"
             />
           </div>
           <div>
@@ -28,7 +28,7 @@ const Contact = () => {
             <input
               type="email"
               placeholder="Your Email"
-              className="w-full border p-3 rounded text-black"
+              className="w-full border border-gray-500 p-3 rounded text-black focus:outline-none focus:border-blue-500"
             />
           </div>
           <div>
@@ -36,7 +36,7 @@ const Contact = () => {
             <textarea
               placeholder="Your Message"
               rows="4"
-              className="w-full border p-3 rounded text-black"
+              className="w-full border border-gray-500 p-3 rounded text-black focus:outline-none focus:border-blue-500"
             ></textarea>
           </div>
           <button
@@ -47,7 +47,7 @@ const Contact = () => {
           </button>
         </form>
 
-        {/* Contact Info Below */}
+        {/* Contact Info */}
         <div className="space-y-6 text-center">
           <div className="flex items-center justify-center space-x-4">
             <FaMapMarkerAlt className="text-orange-400 text-2xl" />
@@ -61,6 +61,16 @@ const Contact = () => {
             <FaEnvelope className="text-orange-400 text-2xl" />
             <p>info@roomierent.com</p>
           </div>
+        </div>
+
+        {/* Contact Image Section */}
+        <div className="mt-8 text-center">
+          <img
+            src={`${process.env.PUBLIC_URL}/images/contact-office.jpeg`}
+            alt="Office Location"
+            className="w-full h-auto rounded-lg shadow-md mx-auto max-w-lg"
+            onError={(e) => e.target.src = `${process.env.PUBLIC_URL}/images/default-placeholder.jpg`} // ✅ Added fallback image
+          />
         </div>
       </div>
     </div>
