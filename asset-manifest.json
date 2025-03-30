@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/roomierent/static/css/main.f152ff03.css",
-    "main.js": "/roomierent/static/js/main.e351f93d.js",
+    "main.js": "/roomierent/static/js/main.34ce1ee4.js",
     "static/js/453.7eb81ecb.chunk.js": "/roomierent/static/js/453.7eb81ecb.chunk.js",
     "index.html": "/roomierent/index.html",
     "main.f152ff03.css.map": "/roomierent/static/css/main.f152ff03.css.map",
-    "main.e351f93d.js.map": "/roomierent/static/js/main.e351f93d.js.map",
+    "main.34ce1ee4.js.map": "/roomierent/static/js/main.34ce1ee4.js.map",
     "453.7eb81ecb.chunk.js.map": "/roomierent/static/js/453.7eb81ecb.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f152ff03.css",
-    "static/js/main.e351f93d.js"
+    "static/js/main.34ce1ee4.js"
   ]
 }
