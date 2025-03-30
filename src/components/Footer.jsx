@@ -32,10 +32,22 @@ const Footer = () => {
           <p>Email: info@roomierent.com</p>
           <p>Phone: +234 123 456 7890</p>
           <div className="flex justify-center md:justify-end mt-4 space-x-4">
-            <a href="#" className="text-gray-300 hover:text-blue-500 text-2xl transition-transform transform hover:scale-125 duration-300"><FaFacebookF /></a>
-            <a href="#" className="text-gray-300 hover:text-sky-400 text-2xl transition-transform transform hover:scale-125 duration-300"><FaTwitter /></a>
-            <a href="#" className="text-gray-300 hover:text-pink-500 text-2xl transition-transform transform hover:scale-125 duration-300"><FaInstagram /></a>
-            <a href="#" className="text-gray-300 hover:text-blue-600 text-2xl transition-transform transform hover:scale-125 duration-300"><FaLinkedin /></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" 
+               className="text-gray-300 hover:text-blue-500 text-2xl transition-transform transform hover:scale-125 duration-300">
+              <FaFacebookF />
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" 
+               className="text-gray-300 hover:text-sky-400 text-2xl transition-transform transform hover:scale-125 duration-300">
+              <FaTwitter />
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" 
+               className="text-gray-300 hover:text-pink-500 text-2xl transition-transform transform hover:scale-125 duration-300">
+              <FaInstagram />
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" 
+               className="text-gray-300 hover:text-blue-600 text-2xl transition-transform transform hover:scale-125 duration-300">
+              <FaLinkedin />
+            </a>
           </div>
         </div>
       </div>
@@ -48,3 +60,4 @@ const Footer = () => {
 };
 
 export default Footer;
+

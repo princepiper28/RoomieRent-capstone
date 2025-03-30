@@ -2,7 +2,7 @@
   "name": "roomierent-capstone",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://princepiper28.github.io/roomierent",
+   "homepage": "https://princepiper28.github.io/roomierent",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
