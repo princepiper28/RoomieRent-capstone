@@ -15,24 +15,44 @@ const Dashboard = () => {
   const [filters, setFilters] = useState({ location: "", price: "", type: "" });
 
   useEffect(() => {
-    if (!user) {
-      navigate("/login");
-    }
+    if (!user) navigate("/login");
   }, [user, navigate]);
 
   useEffect(() => {
     const savedProfilePicture = localStorage.getItem("profilePicture");
-    if (savedProfilePicture) {
-      setProfilePicture(savedProfilePicture);
-    }
+    if (savedProfilePicture) setProfilePicture(savedProfilePicture);
   }, []);
 
+  // ✅ Fetch listings separately
   useEffect(() => {
     fetch("http://localhost:5000/listings")
       .then((res) => res.json())
-      .then((data) => setListings(Array.isArray(data) ? data : []))
-      .catch(console.error);
+      .then((data) => {
+        let filteredData = Array.isArray(data) ? data : [];
 
+        if (filters.location?.trim()) {
+          filteredData = filteredData.filter((listing) =>
+            listing.location.toLowerCase().includes(filters.location.toLowerCase())
+          );
+        }
+
+        if (filters.price && !isNaN(Number(filters.price))) {
+          filteredData = filteredData.filter((listing) =>
+            Number(listing.price) <= Number(filters.price)
+          );
+        }
+
+        if (filters.type?.trim()) {
+          filteredData = filteredData.filter((listing) => listing.type === filters.type);
+        }
+
+        setListings(filteredData);
+      })
+      .catch(console.error);
+  }, [filters]); // ✅ This effect only depends on filters
+
+  // ✅ Separate useEffect for roommates
+  useEffect(() => {
     fetch("http://localhost:5000/roommates")
       .then((res) => res.json())
       .then((data) =>
@@ -40,17 +60,16 @@ const Dashboard = () => {
           Array.isArray(data)
             ? data.map((roommate) => ({
                 ...roommate,
-                rating: Math.max(0, Number(roommate.rating) || 0), // Ensuring valid rating
+                rating: Math.max(0, Number(roommate.rating) || 0), // Ensure rating is valid
               }))
             : []
         )
       )
       .catch(console.error);
-  }, []);
+  }, []); // ✅ This runs only once when the component mounts
 
   const handleProfilePictureUpload = (event) => {
     const file = event.target.files[0];
-
     if (file && file.type.startsWith("image/")) {
       const reader = new FileReader();
       reader.onloadend = () => {
@@ -77,10 +96,12 @@ const Dashboard = () => {
 
         <nav className="mt-8 w-full">
           <ul className="space-y-4 text-center">
-            {[{ path: "/listings", icon: <FaHome />, label: "Listings" },
+            {[
+              { path: "/listings", icon: <FaHome />, label: "Listings" },
               { path: "/messages", icon: <FaEnvelope />, label: "Messages" },
               { path: "/favorites", icon: <FaHeart />, label: "Favorites" },
-              { path: "/settings", icon: <FaCog />, label: "Settings" }].map(({ path, icon, label }) => (
+              { path: "/settings", icon: <FaCog />, label: "Settings" },
+            ].map(({ path, icon, label }) => (
               <li key={path}>
                 <Link to={path} className="flex items-center justify-center space-x-2 hover:text-gray-300">
                   {icon} <span>{label}</span>
@@ -101,8 +122,10 @@ const Dashboard = () => {
             <FaFilter className="mr-2" /> Filter Listings
           </h2>
           <div className="flex space-x-4">
-            {[{ placeholder: "Location", key: "location" },
-              { placeholder: "Max Price ($)", key: "price" }].map(({ placeholder, key }) => (
+            {[
+              { placeholder: "Location", key: "location" },
+              { placeholder: "Max Price ($)", key: "price" },
+            ].map(({ placeholder, key }) => (
               <input
                 key={key}
                 type="text"
@@ -126,7 +149,7 @@ const Dashboard = () => {
           <div className="grid grid-cols-2 gap-4">
             {listings.length > 0 ? (
               listings.map(({ id, title, location, price }) => (
-                <div key={id} className="border border-orange-500 bg-orange-100 p-4 rounded shadow-md text-orange-900" >
+                <div key={id} className="border border-orange-500 bg-orange-100 p-4 rounded shadow-md text-orange-900">
                   <h3 className="font-semibold">{title}</h3>
                   <p className="text-sm text-gray-500">{location}</p>
                   <p className="font-bold text-lg">${price}</p>
@@ -134,28 +157,6 @@ const Dashboard = () => {
               ))
             ) : (
               <p>No listings available</p>
-            )}
-          </div>
-        </section>
-
-        {/* Roommates */}
-        <section>
-          <h2 className="text-xl font-bold mt-6 mb-4">Suggested Roommates</h2>
-          <div className="grid grid-cols-2 gap-4">
-            {roommates.length > 0 ? (
-              roommates.map(({ id, profilePicture, name, matchPercentage, rating }) => (
-                <div key={id} className="border p-4 rounded shadow text-center">
-                  <img src={profilePicture || "/images/user-avatar.png"} alt="Roommate" className="w-16 h-16 rounded-full mx-auto mb-2 object-cover" />
-                  <h3 className="font-semibold">{name}</h3>
-                  <p className="text-sm text-gray-500">Match: {matchPercentage}%</p>
-                  <div className="flex justify-center text-yellow-500 my-2">
-                    {[...Array(Math.max(0, Math.floor(rating)))].map((_, i) => <FaStar key={i} />)}
-                  </div>
-                  <button className="bg-blue-500 text-white px-3 py-1 rounded mt-2">Connect</button>
-                </div>
-              ))
-            ) : (
-              <p>No roommates available</p>
             )}
           </div>
         </section>
@@ -170,4 +171,3 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
-
