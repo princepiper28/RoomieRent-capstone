@@ -17,7 +17,7 @@ function Home() {
       <div
         className="bg-center bg-no-repeat bg-cover"
         style={{
-          backgroundImage: `url(${process.env.PUBLIC_URL}/images/homepage-background.jpg)`,  // ✅ Fixed background image path
+          backgroundImage: `url(${process.env.PUBLIC_URL}/images/homepage-background.jpg)`,  // Fixed background image path
         }}
       >
         <div className="bg-black bg-opacity-60 min-h-screen p-8">
@@ -47,13 +47,14 @@ function Home() {
               Available Properties
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredProperties.slice(0, 6).map((property) => (
-                <PropertyCard key={property.id} property={property} />
-              ))}
-              {filteredProperties.length === 0 && (
+              {filteredProperties.length === 0 ? (
                 <p className="text-gray-500 col-span-full text-center">
                   No properties found for your search.
                 </p>
+              ) : (
+                filteredProperties.slice(0, 6).map((property) => (
+                  <PropertyCard key={property.id} property={property} />
+                ))
               )}
             </div>
 

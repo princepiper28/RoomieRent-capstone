@@ -77,12 +77,10 @@ const Dashboard = () => {
 
         <nav className="mt-8 w-full">
           <ul className="space-y-4 text-center">
-            {[
-              { path: "/listings", icon: <FaHome />, label: "Listings" },
+            {[{ path: "/listings", icon: <FaHome />, label: "Listings" },
               { path: "/messages", icon: <FaEnvelope />, label: "Messages" },
               { path: "/favorites", icon: <FaHeart />, label: "Favorites" },
-              { path: "/settings", icon: <FaCog />, label: "Settings" },
-            ].map(({ path, icon, label }) => (
+              { path: "/settings", icon: <FaCog />, label: "Settings" }].map(({ path, icon, label }) => (
               <li key={path}>
                 <Link to={path} className="flex items-center justify-center space-x-2 hover:text-gray-300">
                   {icon} <span>{label}</span>
@@ -94,7 +92,7 @@ const Dashboard = () => {
       </aside>
 
       {/* Main Content */}
-      <main className="flex-1 p-6">
+      <main className="flex-1 p-6 bg-gray-100">
         <h1 className="text-3xl font-bold mb-6">Welcome, {user?.firstName || "Guest"}!</h1>
 
         {/* Filters */}
@@ -103,10 +101,8 @@ const Dashboard = () => {
             <FaFilter className="mr-2" /> Filter Listings
           </h2>
           <div className="flex space-x-4">
-            {[
-              { placeholder: "Location", key: "location" },
-              { placeholder: "Max Price ($)", key: "price" },
-            ].map(({ placeholder, key }) => (
+            {[{ placeholder: "Location", key: "location" },
+              { placeholder: "Max Price ($)", key: "price" }].map(({ placeholder, key }) => (
               <input
                 key={key}
                 type="text"
@@ -130,7 +126,7 @@ const Dashboard = () => {
           <div className="grid grid-cols-2 gap-4">
             {listings.length > 0 ? (
               listings.map(({ id, title, location, price }) => (
-                <div key={id} className="border p-4 rounded shadow">
+                <div key={id} className="border border-orange-500 bg-orange-100 p-4 rounded shadow-md text-orange-900" >
                   <h3 className="font-semibold">{title}</h3>
                   <p className="text-sm text-gray-500">{location}</p>
                   <p className="font-bold text-lg">${price}</p>
@@ -174,3 +170,4 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+

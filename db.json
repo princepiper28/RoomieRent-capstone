@@ -4,15 +4,15 @@
       "id": 1,
       "title": "Cozy Apartment in Lagos",
       "location": "Lagos, Nigeria",
-      "price": "$500/month",
-      "image": "/images/property1.jpeg",
+      "price": "400,000/month",
+      "image": "property1.jpeg",
       "features": ["WiFi", "Parking", "Air Conditioning"]
     },
     {
       "id": 2,
       "title": "Modern Studio in Abuja",
       "location": "Abuja, Nigeria",
-      "price": "$400/month",
+      "price": "350,000/month",
       "image": "property2.jpeg",
       "features": ["24/7 Security", "Water Supply", "Gym"]
     },
@@ -20,7 +20,7 @@
       "id": 3,
       "title": "Luxury Duplex in VI",
       "location": "Victoria Island, Lagos",
-      "price": "₦1,200,000 / month",
+      "price": "1,200,000 / month",
       "image": "property3.jpeg",
       "features": ["WiFi", "Parking", "Air Conditioning"]
     },
@@ -28,7 +28,7 @@
       "id": 4,
       "title": "Furnished Apartment in Yaba",
       "location": "Yaba, Lagos",
-      "price": "₦350,000 / month",
+      "price": "350,000 / month",
       "image": "property4.jpeg",
       "features": ["CCTV", "Power Backup", "WiFi"]
     },
@@ -36,7 +36,7 @@
       "id": 5,
       "title": "Student Hostel in UNILAG",
       "location": "Akoka, Lagos",
-      "price": "₦80,000 / semester",
+      "price": "80,000 / semester",
       "image": "property5.jpeg",
       "features": ["Library Access", "Study Area", "Cafeteria"]
     },
@@ -44,7 +44,7 @@
       "id": 6,
       "title": "Serviced Apartment in Wuse",
       "location": "Wuse 2, Abuja",
-      "price": "₦700,000 / month",
+      "price": "700,000 / month",
       "image": "property6.jpeg",
       "features": ["24/7 Power", "WiFi", "Swimming Pool"]
     },
@@ -52,7 +52,7 @@
       "id": 7,
       "title": "Affordable Shared Flat",
       "location": "Surulere, Lagos",
-      "price": "₦120,000 / month",
+      "price": "120,000 / month",
       "image": "property7.jpeg",
       "features": ["WiFi", "Water", "Shared Kitchen"]
     },
@@ -60,7 +60,7 @@
       "id": 8,
       "title": "Luxury Penthouse in Banana Island",
       "location": "Banana Island, Lagos",
-      "price": "₦5,000,000 / month",
+      "price": "5,000,000 / month",
       "image": "property8.jpeg",
       "features": ["Private Pool", "Gym", "24/7 Security"]
     },
@@ -68,7 +68,7 @@
       "id": 9,
       "title": "2-Bedroom Apartment in Asokoro",
       "location": "Asokoro, Abuja",
-      "price": "₦600,000 / month",
+      "price": "600,000 / month",
       "image": "property9.jpeg",
       "features": ["WiFi", "Parking", "Security"]
     },
@@ -76,7 +76,7 @@
       "id": 10,
       "title": "Simple Room in Agege",
       "location": "Agege, Lagos",
-      "price": "₦70,000 / month",
+      "price": "70,000 / month",
       "image": "property10.jpeg",
       "features": ["Water", "Power Supply"]
     },
@@ -84,7 +84,7 @@
       "id": 11,
       "title": "Furnished Studio in Gwarinpa",
       "location": "Gwarinpa, Abuja",
-      "price": "₦250,000 / month",
+      "price": "250,000 / month",
       "image": "property11.jpeg",
       "features": ["Air Conditioning", "WiFi", "Power Backup"]
     },
@@ -92,7 +92,7 @@
       "id": 12,
       "title": "3-Bedroom Flat in Ajah",
       "location": "Ajah, Lagos",
-      "price": "₦400,000 / month",
+      "price": "400,000 / month",
       "image": "property12.jpeg",
       "features": ["Parking", "Security", "Children's Playground"]
     },
@@ -100,7 +100,7 @@
       "id": 13,
       "title": "Short Let Apartment in VI",
       "location": "Victoria Island, Lagos",
-      "price": "₦80,000 / night",
+      "price": "80,000 / night",
       "image": "property13.jpeg",
       "features": ["WiFi", "Air Conditioning", "Swimming Pool"]
     },
@@ -108,7 +108,7 @@
       "id": 14,
       "title": "1-Bedroom Apartment in Alimosho",
       "location": "Alimosho, Lagos",
-      "price": "₦150,000 / month",
+      "price": "150,000 / month",
       "image": "property14.jpeg",
       "features": ["Water Supply", "Power", "Parking"]
     },
@@ -116,7 +116,7 @@
       "id": 15,
       "title": "Bungalow in Gbagada",
       "location": "Gbagada, Lagos",
-      "price": "₦350,000 / month",
+      "price": "350,000 / month",
       "image": "property15.jpeg",
       "features": ["CCTV", "Parking", "Children’s Playground"]
     },
@@ -124,7 +124,7 @@
       "id": 16,
       "title": "Newly Built Flat in Ikorodu",
       "location": "Ikorodu, Lagos",
-      "price": "₦200,000 / month",
+      "price": "200,000 / month",
       "image": "property16.jpeg",
       "features": ["WiFi", "Water", "Security"]
     },
@@ -132,7 +132,7 @@
       "id": 17,
       "title": "Affordable Room in Surulere",
       "location": "Surulere, Lagos",
-      "price": "₦90,000 / month",
+      "price": "90,000 / month",
       "image": "property17.jpeg",
       "features": ["Shared Kitchen", "Water", "WiFi"]
     },
@@ -140,7 +140,7 @@
       "id": 18,
       "title": "Luxury 4-Bedroom Duplex",
       "location": "Maitama, Abuja",
-      "price": "₦3,000,000 / month",
+      "price": "3,000,000 / month",
       "image": "property18.jpeg",
       "features": ["Gym", "Swimming Pool", "24/7 Security"]
     },
@@ -148,7 +148,7 @@
       "id": 19,
       "title": "Self-Contained Apartment",
       "location": "Ojodu, Lagos",
-      "price": "₦120,000 / month",
+      "price": "120,000 / month",
       "image": "property19.jpeg",
       "features": ["Water", "Parking", "WiFi"]
     },
@@ -156,7 +156,7 @@
       "id": 20,
       "title": "Mini Flat in Lekki",
       "location": "Lekki, Lagos",
-      "price": "₦300,000 / month",
+      "price": "300,000 / month",
       "image": "property20.jpeg",
       "features": ["Air Conditioning", "WiFi", "24/7 Security"]
     },
@@ -164,7 +164,7 @@
       "id": 21,
       "title": "Furnished Apartment in Jabi",
       "location": "Jabi, Abuja",
-      "price": "₦450,000 / month",
+      "price": "450,000 / month",
       "image": "property21.jpeg",
       "features": ["CCTV", "Power Backup", "Parking"]
     },
@@ -172,7 +172,7 @@
       "id": 22,
       "title": "Modern Home in Port Harcourt",
       "location": "Port Harcourt, Rivers",
-      "price": "₦500,000 / month",
+      "price": "500,000 / month",
       "image": "property22.jpeg",
       "features": ["Parking", "Garden", "WiFi"]
     },
@@ -180,7 +180,7 @@
       "id": 23,
       "title": "Studio Apartment in Enugu",
       "location": "Enugu, Enugu",
-      "price": "₦180,000 / month",
+      "price": "180,000 / month",
       "image": "property23.jpeg",
       "features": ["WiFi", "Kitchen", "Security"]
     },
@@ -188,7 +188,7 @@
       "id": 24,
       "title": "Luxury Townhouse in Asaba",
       "location": "Asaba, Delta",
-      "price": "₦850,000 / month",
+      "price": "850,000 / month",
       "image": "property24.jpeg",
       "features": ["Gym", "Security", "Swimming Pool"]
     },
@@ -196,7 +196,7 @@
       "id": 25,
       "title": "Budget Apartment in Ibadan",
       "location": "Ibadan, Oyo",
-      "price": "₦120,000 / month",
+      "price": "120,000 / month",
       "image": "property25.jpeg",
       "features": ["Parking", "Security", "WiFi"]
     },
@@ -204,7 +204,7 @@
       "id": 26,
       "title": "Beachfront Villa in Lekki",
       "location": "Lekki, Lagos",
-      "price": "₦1,500,000 / month",
+      "price": "1,500,000 / month",
       "image": "property26.jpeg",
       "features": ["Ocean View", "Swimming Pool", "24/7 Security"]
     },
@@ -212,7 +212,7 @@
       "id": 27,
       "title": "Cozy Bungalow in Owerri",
       "location": "Owerri, Imo",
-      "price": "₦250,000 / month",
+      "price": "250,000 / month",
       "image": "property27.jpeg",
       "features": ["Parking", "Water Supply", "WiFi"]
     },
@@ -220,7 +220,7 @@
       "id": 28,
       "title": "Classic Home in Benin",
       "location": "Benin City, Edo",
-      "price": "₦400,000 / month",
+      "price": "400,000 / month",
       "image": "property28.jpeg",
       "features": ["Garden", "WiFi", "Security"]
     }
