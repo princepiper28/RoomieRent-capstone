@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useAuth } from "../AuthContext";
 import { useNavigate, Link } from "react-router-dom";
-import { FaHome, FaEnvelope, FaHeart, FaCog, FaFilter, FaStar } from "react-icons/fa";
+import { FaHome, FaEnvelope, FaHeart, FaCog, FaFilter } from "react-icons/fa"; // Removed FaStar
 
 const Dashboard = () => {
   const { user, logout } = useAuth();
@@ -96,7 +96,7 @@ const Dashboard = () => {
 
         <nav className="mt-8 w-full">
           <ul className="space-y-4 text-center">
-            {[
+            {[ 
               { path: "/listings", icon: <FaHome />, label: "Listings" },
               { path: "/messages", icon: <FaEnvelope />, label: "Messages" },
               { path: "/favorites", icon: <FaHeart />, label: "Favorites" },
@@ -122,7 +122,7 @@ const Dashboard = () => {
             <FaFilter className="mr-2" /> Filter Listings
           </h2>
           <div className="flex space-x-4">
-            {[
+            {[ 
               { placeholder: "Location", key: "location" },
               { placeholder: "Max Price ($)", key: "price" },
             ].map(({ placeholder, key }) => (
@@ -157,6 +157,23 @@ const Dashboard = () => {
               ))
             ) : (
               <p>No listings available</p>
+            )}
+          </div>
+        </section>
+
+        {/* Roommates */}
+        <section className="mt-6">
+          <h2 className="text-xl font-bold mb-4">Roommates</h2>
+          <div className="grid grid-cols-1 gap-4">
+            {roommates.length > 0 ? (
+              roommates.map(({ id, name, rating }) => (
+                <div key={id} className="border border-blue-500 p-4 rounded shadow-md text-blue-900">
+                  <h3 className="font-semibold">{name}</h3>
+                  <p className="text-sm">Rating: {rating} <FaStar className="inline text-yellow-500" /></p>
+                </div>
+              ))
+            ) : (
+              <p>No roommates available</p>
             )}
           </div>
         </section>
