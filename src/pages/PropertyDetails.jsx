@@ -46,7 +46,7 @@ const PropertyDetails = () => {
         <div>
           <h1 className="text-3xl font-bold text-gray-800">{property.title}</h1>
           <p className="text-gray-600 text-lg mt-2">{property.location}</p>
-          <p className="text-green-600 font-semibold text-2xl mt-2">${property.price} / month</p>
+          <p className="text-green-600 font-semibold text-2xl mt-2">{property.price} / month</p>
           <p className="mt-4 text-gray-700 leading-relaxed">{property.description}</p>
 
           {/* Property Features */}
