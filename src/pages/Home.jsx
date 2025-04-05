@@ -7,9 +7,16 @@ import Footer from '../components/Footer';
 function Home() {
   const [searchTerm, setSearchTerm] = useState('');
 
-  const filteredProperties = properties.filter((property) =>
-    property.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    property.location.toLowerCase().includes(searchTerm.toLowerCase())
+  // Ensure all properties have the correct image path
+  const propertiesList = properties.map(property => ({
+    ...property,
+    image: property.image ? `/images/${property.image}` : '/images/default-property.jpeg',
+  }));
+
+  // Filter properties by title or location
+  const filteredProperties = propertiesList.filter((property) =>
+    (property.title && property.title.toLowerCase().includes(searchTerm.toLowerCase())) ||
+    (property.location && property.location.toLowerCase().includes(searchTerm.toLowerCase()))
   );
 
   return (
@@ -17,7 +24,7 @@ function Home() {
       <div
         className="bg-center bg-no-repeat bg-cover"
         style={{
-          backgroundImage: `url(${process.env.PUBLIC_URL}/images/homepage-background.jpg)`,  // Fixed background image path
+          backgroundImage: `url(${process.env.PUBLIC_URL}/images/homepage-background.jpg)`,
         }}
       >
         <div className="bg-black bg-opacity-60 min-h-screen p-8">
@@ -76,5 +83,4 @@ function Home() {
 }
 
 export default Home;
-
 

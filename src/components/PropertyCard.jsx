@@ -10,15 +10,15 @@ const PropertyCard = ({ property }) => {
     <div className="bg-white border rounded-lg shadow-md p-4 hover:shadow-xl transition duration-300 transform hover:scale-105">
       {/* ✅ Ensure Image Path is Correct */}
       <img 
-        src={`${process.env.PUBLIC_URL}/images/${property.image}`} 
+        src={property.image} 
         alt={property.title}
         className="w-full h-48 object-cover rounded-lg mb-3"
-        onError={(e) => e.target.src = `${process.env.PUBLIC_URL}/images/default-property.jpg`}
+        onError={(e) => e.target.src = `${process.env.PUBLIC_URL}/images/default-property.jpeg`} // Fallback image
       />
 
       <h2 className="text-xl font-semibold">{property.title || "Untitled Property"}</h2>
       <p className="text-gray-600">{property.location || "Unknown location"}</p>
-      <p className="text-green-600 font-bold">₦{property.price || "N/A"}</p>
+      <p className="text-green-600 font-bold">{property.price || "N/A"}</p>
 
       {/* ✅ Check if features exist before mapping */}
       {property.features && property.features.length > 0 ? (

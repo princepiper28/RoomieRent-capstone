@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useAuth } from "../AuthContext";
 import { useNavigate, Link } from "react-router-dom";
-import { FaHome, FaEnvelope, FaHeart, FaCog, FaFilter } from "react-icons/fa"; // Removed FaStar
+import { FaHome, FaEnvelope, FaHeart, FaCog, FaFilter, FaStar } from "react-icons/fa"; // Removed FaStar
 
 const Dashboard = () => {
   const { user, logout } = useAuth();
