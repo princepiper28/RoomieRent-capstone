@@ -1,90 +1,11 @@
 import React, { useState } from "react";
-
-const mockRoommates = [
-  {
-    id: 1,
-    name: "John Doe",
-    age: 25,
-    location: "Lagos",
-    budget: "$300/month",
-    preferences: ["Non-smoker", "Pet-friendly", "Night owl"],
-    hobbies: ["Gaming", "Cooking", "Reading"],
-    profession: "Software Developer",
-    image: "https://randomuser.me/api/portraits/men/32.jpg",
-  },
-  {
-    id: 2,
-    name: "Jane Smith",
-    age: 27,
-    location: "Abuja",
-    budget: "$400/month",
-    preferences: ["Quiet", "Early riser", "No pets"],
-    hobbies: ["Yoga", "Traveling", "Photography"],
-    profession: "Marketing Specialist",
-    image: "https://randomuser.me/api/portraits/women/44.jpg",
-  },
-  {
-    id: 3,
-    name: "Michael Johnson",
-    age: 30,
-    location: "Lagos",
-    budget: "$500/month",
-    preferences: ["Neat", "Non-smoker", "Gym enthusiast"],
-    hobbies: ["Weightlifting", "Gaming", "Cooking"],
-    profession: "Software Engineer",
-    image: "https://randomuser.me/api/portraits/men/33.jpg",
-  },
-  {
-    id: 4,
-    name: "Emily Davis",
-    age: 25,
-    location: "Port Harcourt",
-    budget: "$350/month",
-    preferences: ["Social", "Loves pets", "Night owl"],
-    hobbies: ["Dancing", "Volunteering", "Board games"],
-    profession: "Nurse",
-    image: "https://randomuser.me/api/portraits/women/22.jpg",
-  },
-  {
-    id: 5,
-    name: "David Okafor",
-    age: 29,
-    location: "Enugu",
-    budget: "$450/month",
-    preferences: ["Organized", "Quiet", "Non-smoker"],
-    hobbies: ["Reading", "Cycling", "Photography"],
-    profession: "Civil Engineer",
-    image: "https://randomuser.me/api/portraits/men/25.jpg",
-  },
-  {
-    id: 6,
-    name: "Sophia Williams",
-    age: 26,
-    location: "Ibadan",
-    budget: "$300/month",
-    preferences: ["Loves cooking", "Friendly", "Dog lover"],
-    hobbies: ["Baking", "Painting", "Movies"],
-    profession: "Teacher",
-    image: "https://randomuser.me/api/portraits/women/55.jpg",
-  },
-  {
-    id: 7,
-    name: "Samuel Osei",
-    age: 28,
-    location: "Kano",
-    budget: "$400/month",
-    preferences: ["Respectful", "Music lover", "Early riser"],
-    hobbies: ["Guitar", "Hiking", "Traveling"],
-    profession: "Musician",
-    image: "https://randomuser.me/api/portraits/men/41.jpg",
-  },
-];
+import roommateData from "../data/roommates"; // Importing mock roommate data
 
 const RoommateMatching = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
   // Filter roommates based on name or location (case-insensitive)
-  const filteredRoommates = mockRoommates.filter((roommate) =>
+  const filteredRoommates = roommateData.filter((roommate) =>
     roommate.name.toLowerCase().includes(searchTerm.trim().toLowerCase()) ||
     roommate.location.toLowerCase().includes(searchTerm.trim().toLowerCase())
   );
@@ -153,3 +74,4 @@ const RoommateMatching = () => {
 };
 
 export default RoommateMatching;
+

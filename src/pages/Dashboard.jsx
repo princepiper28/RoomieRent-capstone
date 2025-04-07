@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { useAuth } from "../AuthContext";
+import { useAuth } from "../context/AuthContext";
 import { useNavigate, Link } from "react-router-dom";
-import { FaHome, FaEnvelope, FaHeart, FaCog, FaFilter, FaStar } from "react-icons/fa"; // Removed FaStar
+import { FaHome, FaEnvelope, FaHeart, FaCog, FaFilter, FaStar } from "react-icons/fa";
 
 const Dashboard = () => {
   const { user, logout } = useAuth();
@@ -49,7 +49,7 @@ const Dashboard = () => {
         setListings(filteredData);
       })
       .catch(console.error);
-  }, [filters]); // ✅ This effect only depends on filters
+  }, [filters]);
 
   // ✅ Separate useEffect for roommates
   useEffect(() => {
@@ -60,13 +60,13 @@ const Dashboard = () => {
           Array.isArray(data)
             ? data.map((roommate) => ({
                 ...roommate,
-                rating: Math.max(0, Number(roommate.rating) || 0), // Ensure rating is valid
+                rating: Math.max(0, Number(roommate.rating) || 0),
               }))
             : []
         )
       )
       .catch(console.error);
-  }, []); // ✅ This runs only once when the component mounts
+  }, []);
 
   const handleProfilePictureUpload = (event) => {
     const file = event.target.files[0];
@@ -178,6 +178,16 @@ const Dashboard = () => {
           </div>
         </section>
 
+        {/* Rent Calculator Link */}
+        <div className="mt-6">
+          <Link 
+            to="/rent-calculator" 
+            className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition"
+          >
+            Open Rent Calculator
+          </Link>
+        </div>
+
         {/* Logout */}
         <button onClick={() => { logout(); navigate("/"); }} className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 mt-6">
           Logout
@@ -188,3 +198,4 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import PropertyCard from "../components/PropertyCard"; // Use a separate component for cleaner code
+import PropertyCard from "../components/PropertyCard"; // Separate component for cleaner code
 
 const Listings = () => {
   const [properties, setProperties] = useState([]);
@@ -17,7 +17,6 @@ const Listings = () => {
         }
 
         const data = await response.json();
-
         console.log("Fetched properties:", data); // Debugging
 
         // ✅ Ensure all properties have an image, set fallback if missing
@@ -25,7 +24,7 @@ const Listings = () => {
           ...property,
           image: property.image
             ? `http://localhost:5000/images/${property.image}` // Ensure proper path
-            : `${process.env.PUBLIC_URL}/images/default-property.jpeg`, // Fallback image
+            : "/images/default-property.jpeg", // Fallback image
         }));
 
         setProperties(updatedProperties);

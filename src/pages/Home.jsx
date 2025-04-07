@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import properties from '../data/properties';
 import PropertyCard from '../components/PropertyCard';
 import { Link } from 'react-router-dom';
@@ -6,6 +6,13 @@ import Footer from '../components/Footer';
 
 function Home() {
   const [searchTerm, setSearchTerm] = useState('');
+  const [favorites, setFavorites] = useState(
+    JSON.parse(localStorage.getItem('favorites')) || []
+  );
+
+  useEffect(() => {
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+  }, [favorites]);
 
   // Ensure all properties have the correct image path
   const propertiesList = properties.map(property => ({
@@ -18,6 +25,17 @@ function Home() {
     (property.title && property.title.toLowerCase().includes(searchTerm.toLowerCase())) ||
     (property.location && property.location.toLowerCase().includes(searchTerm.toLowerCase()))
   );
+
+  // Toggle favorites
+  const toggleFavorite = (propertyId) => {
+    let updatedFavorites;
+    if (favorites.includes(propertyId)) {
+      updatedFavorites = favorites.filter(id => id !== propertyId);
+    } else {
+      updatedFavorites = [...favorites, propertyId];
+    }
+    setFavorites(updatedFavorites);
+  };
 
   return (
     <>
@@ -60,7 +78,12 @@ function Home() {
                 </p>
               ) : (
                 filteredProperties.slice(0, 6).map((property) => (
-                  <PropertyCard key={property.id} property={property} />
+                  <PropertyCard
+                    key={property.id}
+                    property={property}
+                    isFavorite={favorites.includes(property.id)}
+                    toggleFavorite={toggleFavorite}
+                  />
                 ))
               )}
             </div>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { useAuth } from "../AuthContext";
+import { useAuth } from "../context/AuthContext";
 import { FaBars, FaTimes } from "react-icons/fa"; // Icons for mobile menu
 
 const Navbar = () => {
@@ -20,10 +20,13 @@ const Navbar = () => {
           <span className="text-orange-500">Rent</span>
         </h1>
 
-        {/* Desktop Menu (Hidden on mobile) */}
+        {/* Desktop Menu */}
         <ul className="hidden md:flex gap-6 text-gray-700">
           <li><Link to="/" className="hover:text-blue-500">Home</Link></li>
           <li><Link to="/listings" className="hover:text-blue-500">Listings</Link></li>
+          <li><Link to="/favorites" className="hover:text-blue-500 px-4">
+           Favorites ❤️
+          </Link></li>
           <li><Link to="/about" className="hover:text-blue-500">About</Link></li>
           <li><Link to="/contact" className="hover:text-blue-500">Contact</Link></li>
 
@@ -52,11 +55,14 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Menu (Hidden by default) */}
+      {/* Mobile Menu */}
       {isOpen && (
         <ul className="md:hidden bg-gray-100 flex flex-col items-center space-y-4 py-4">
           <li><Link to="/" className="block" onClick={toggleMenu}>Home</Link></li>
           <li><Link to="/listings" className="block" onClick={toggleMenu}>Listings</Link></li>
+          <li><Link to="/favorites" className="block text-white bg-blue-500 px-4 py-2 rounded hover:bg-blue-600" onClick={toggleMenu}>
+            View Favorites ❤️
+          </Link></li>
           <li><Link to="/about" className="block" onClick={toggleMenu}>About</Link></li>
           <li><Link to="/contact" className="block" onClick={toggleMenu}>Contact</Link></li>
 
@@ -84,3 +90,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

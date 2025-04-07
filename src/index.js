@@ -4,13 +4,19 @@ import ReactDOM from 'react-dom/client';
 import './index.css'; 
 import App from './App';   
 import reportWebVitals from './reportWebVitals';
+import { AuthProvider } from "./context/AuthContext";  // ✅ Import AuthProvider
+import { FavoritesProvider } from "./context/FavoritesContext";  // ✅ Import FavoritesProvider
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <React.StrictMode>
-    <HashRouter>  {/* ✅ Wrapped App inside HashRouter */}
-      <App />
+    <HashRouter>  
+      <AuthProvider>  {/* ✅ Wrap inside AuthProvider */}
+        <FavoritesProvider>  {/* ✅ Wrap inside FavoritesProvider */}
+          <App />
+        </FavoritesProvider>
+      </AuthProvider>
     </HashRouter>
   </React.StrictMode>
 );

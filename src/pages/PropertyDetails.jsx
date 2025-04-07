@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
+import Reviews from "../components/Reviews"; // Import Reviews component
 
 const PropertyDetails = () => {
   const { id } = useParams();
@@ -69,9 +70,16 @@ const PropertyDetails = () => {
           </Link>
         </div>
       </div>
+
+      {/* Reviews Section */}
+      <div className="mt-8">
+        <h2 className="text-2xl font-bold text-gray-800 mb-4">Reviews & Ratings</h2>
+        <Reviews propertyId={id} /> {/* Pass property ID to fetch related reviews */}
+      </div>
     </div>
   );
 };
 
 export default PropertyDetails;
+
 
